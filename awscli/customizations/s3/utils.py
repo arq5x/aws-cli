@@ -281,7 +281,7 @@ def uni_print(statement, out_file=None):
         # Otherwise we assume that out_file is a
         # text writer type that accepts str/unicode instead
         # of bytes.
-        out_file.write(statement)
+        out_file.write(statement + '\n')
     except UnicodeEncodeError:
         # Some file like objects like cStringIO will
         # try to decode as ascii on python2.
@@ -308,7 +308,7 @@ def uni_print(statement, out_file=None):
             new_encoding = 'ascii'
         new_statement = statement.encode(
             new_encoding, 'replace').decode(new_encoding)
-        out_file.write(new_statement)
+        out_file.write("%\s\n", new_statement)
     out_file.flush()
 
 
