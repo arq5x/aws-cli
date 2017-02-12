@@ -308,7 +308,7 @@ def uni_print(statement, out_file=None):
             new_encoding = 'ascii'
         new_statement = statement.encode(
             new_encoding, 'replace').decode(new_encoding)
-        out_file.write("%\s\n", new_statement)
+        out_file.write(new_statement)
     out_file.flush()
 
 
